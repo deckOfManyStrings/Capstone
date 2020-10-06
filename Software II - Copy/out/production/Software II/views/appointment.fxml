@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.appointmentController">
+   <children>
+      <HBox layoutX="324.0" layoutY="44.0" prefHeight="356.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="356.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="All">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="allTableView" prefHeight="266.0" prefWidth="200.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="allNameId" prefWidth="48.0" text="Id" />
+                                        <TableColumn fx:id="allNameCol" prefWidth="151.0" text="Name" />
+                                      </columns>
+                                    </TableView>
+                                    <Button layoutX="59.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleClearDetailsButton" text="Clear Details" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                      <Tab fx:id="month" text="Month">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="60.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleClearDetailsMonth" text="Clear Details" />
+                                    <TableView fx:id="monthsTableView" layoutX="1.0" prefHeight="278.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn fx:id="monthsTableColumn" prefWidth="45.0" text="Id" />
+                                          <TableColumn fx:id="monthNameCol" prefWidth="154.0" text="Name" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                      </Tab>
+                      <Tab fx:id="weeks" text="Week">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="60.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleClearDetailsWeekly" text="Clear Details" />
+                                    <TableView fx:id="weeksTableView" layoutX="1.0" prefHeight="267.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn fx:id="weeksTableColumn" prefWidth="45.0" text="Id" />
+                                          <TableColumn fx:id="weekNameCol" prefWidth="154.0" text="Name" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="333.0" prefWidth="200.0">
+                     <children>
+                        <StackPane prefHeight="98.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="appointmentIDField" editable="false" promptText="Appointment ID" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="98.0" prefWidth="200.0">
+                           <children>
+                              <ComboBox fx:id="customerField" prefWidth="150.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="98.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="titleField" promptText="Title" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="98.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="descriptionField" promptText="Description" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="76.0" prefWidth="200.0">
+                           <children>
+                              <DatePicker fx:id="datePicker" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="98.0" prefWidth="200.0">
+                           <children>
+                              <ComboBox fx:id="startTime" layoutX="35.0" layoutY="23.0" prefWidth="150.0" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="98.0" prefWidth="200.0">
+                           <children>
+                              <ComboBox fx:id="endTime" prefWidth="150.0" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="356.0" prefWidth="201.0">
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleAddButton" text="Add" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleUpdateButton" text="Update" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleSignoutButton" text="Back to Customers" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Pane prefHeight="38.0" prefWidth="600.0">
+         <children>
+            <StackPane prefHeight="38.0" prefWidth="600.0">
+               <children>
+                  <Label text="Appointments">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

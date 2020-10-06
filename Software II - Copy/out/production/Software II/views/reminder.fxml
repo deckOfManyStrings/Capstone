@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="194.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.reminderController">
+   <children>
+      <Label layoutX="115.0" layoutY="24.0" text="Appointment Reminder" />
+      <Button layoutX="151.0" layoutY="146.0" mnemonicParsing="false" onAction="#handleOkayButton" text="Okay" />
+      <Label fx:id="reminderText" layoutX="27.0" layoutY="41.0" prefHeight="100.0" prefWidth="303.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
